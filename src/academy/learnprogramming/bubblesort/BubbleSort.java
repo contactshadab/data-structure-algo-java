@@ -7,8 +7,8 @@ public class BubbleSort {
 			return;
 		
 		int temp = arr[i];
-		arr[i] = arr[i+1];
-		arr[i+1] = temp;
+		arr[i] = arr[j];
+		arr[j] = temp;
 	}
 	
 	public void sort(int[] arr){
