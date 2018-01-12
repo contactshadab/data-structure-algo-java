@@ -1,4 +1,4 @@
-package academy.learnprogramming.quicksort;
+package shadab.algo.sort.quicksort;
 
 public class QuickSort {
 

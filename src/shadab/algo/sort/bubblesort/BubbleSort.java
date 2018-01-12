@@ -1,4 +1,4 @@
-package academy.learnprogramming.bubblesort;
+package shadab.algo.sort.bubblesort;
 
 public class BubbleSort {
 

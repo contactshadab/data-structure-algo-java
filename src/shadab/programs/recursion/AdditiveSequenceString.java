@@ -1,4 +1,4 @@
-package com.shadab.recursion;
+package shadab.programs.recursion;
 
 public class AdditiveSequenceString {
 	

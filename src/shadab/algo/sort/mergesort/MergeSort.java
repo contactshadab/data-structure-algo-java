@@ -1,4 +1,4 @@
-package academy.learnprogramming.mergesort;
+package shadab.algo.sort.mergesort;
 
 public class MergeSort {
 
