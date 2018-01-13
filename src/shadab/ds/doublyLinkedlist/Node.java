@@ -1,13 +1,21 @@
 package shadab.ds.doublyLinkedlist;
 
 public class Node<T> {
-	T object;
+	T item;
 	Node previous;
 	Node next;
 	
 	public Node(T object) {
 		super();
-		this.object = object;
+		this.item = object;
+	}
+
+	public T getItem() {
+		return item;
+	}
+
+	public void setItem(T item) {
+		this.item = item;
 	}
 
 	public Node getPrevious() {
@@ -28,7 +36,7 @@ public class Node<T> {
 
 	@Override
 	public String toString() {
-		return object.toString();
+		return item.toString();
 	}
 	
 	

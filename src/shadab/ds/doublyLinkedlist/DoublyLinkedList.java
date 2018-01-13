@@ -83,5 +83,31 @@ public class DoublyLinkedList<T> {
 		return removedNode;
 	}
 	
+	public boolean addBefore(T newItem, T existingItem) {
+		if(isEmpty())
+			return false;
+		
+		Node<T> current = head;
+		while(current !=null && !current.getItem().equals(existingItem)) {
+			current = current.getNext();
+		}
+		
+		if(current == null)
+			return false;
+		
+		Node<T> newNode = new Node<T>(newItem);
+		newNode.setPrevious(current.getPrevious());
+		newNode.setNext(current);
+		current.setPrevious(newNode);
+		
+		if(head == current)
+			head = newNode;
+		else
+			newNode.getPrevious().setNext(newNode);
+		
+		size++;
+		return true;
+	}
+	
 	
 }
