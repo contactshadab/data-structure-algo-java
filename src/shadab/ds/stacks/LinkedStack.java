@@ -32,4 +32,5 @@ public class LinkedStack<T> {
 	public void printStack() {
 		stack.printList();
 	}
+	
 }
