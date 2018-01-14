@@ -1,4 +1,4 @@
-package shadab.program.serialization;
+package shadab.programs.serialization;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
