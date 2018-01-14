@@ -1,6 +1,6 @@
 package shadab.ds.doublyLinkedlist;
 
-import shadab.ds.linkedlist.Employee;
+import shadab.models.Employee;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package shadab.ds.linkedlist;
+package shadab.models;
 
 public class Employee {
 	private int id;
