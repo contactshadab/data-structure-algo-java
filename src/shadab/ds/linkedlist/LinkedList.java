@@ -12,6 +12,10 @@ public class LinkedList<T> {
 		size++;
 	}
 	
+	public Node<T> getHead() {
+		return head;
+	}
+
 	public void printList() {
 		Node<T> currentNode = head;
 		System.out.print("Head -> ");
