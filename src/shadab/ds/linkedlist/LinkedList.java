@@ -20,7 +20,7 @@ public class LinkedList<T> {
 			System.out.print(" -> ");
 			currentNode = currentNode.getNext();
 		}
-		System.out.println("");
+		System.out.println("null");
 	}
 	
 	public boolean isEmpty() {
@@ -39,6 +39,34 @@ public class LinkedList<T> {
 		head = head.getNext();
 		size--;
 		return removedNode;
+	}
+	
+	public void insertSorted(T number) {
+		if(!(number instanceof Integer))
+			return;
+		
+		Node<T> insertedNode = new Node<T>(number);
+		
+		if(isEmpty()) {
+			head = insertedNode;
+			return;
+		}
+		
+		Node<T> current = head;
+		Node<T> previous = null;
+		while(current != null && ((Integer)current.getType()) <= (Integer)number) {
+			previous = current;
+			current = current.getNext();
+		}
+		
+		if(current == head)
+			head = insertedNode;
+		else
+			previous.setNext(insertedNode);
+		
+		insertedNode.setNext(current);
+		
+		size++;
 	}
 
 }
