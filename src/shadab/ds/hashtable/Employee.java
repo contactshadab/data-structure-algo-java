@@ -1,20 +1,20 @@
-package shadab.models;
+package shadab.ds.hashtable;
 
 public class Employee {
-	private int id;
+	private String key;
 	private String name;
 	
-	public Employee(int id, String name) {
-		this.id = id;
+	public Employee(String key, String name) {
+		this.key = key;
 		this.name = name;
 	}
 
-	public int getId() {
-		return id;
+	public String getKey() {
+		return key;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
 	public String getName() {
@@ -26,10 +26,15 @@ public class Employee {
 	}
 
 	@Override
+	public String toString() {
+		return "Employee [key=" + key + ", name=" + name + "]";
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + ((key == null) ? 0 : key.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -43,7 +48,10 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (id != other.id)
+		if (key == null) {
+			if (other.key != null)
+				return false;
+		} else if (!key.equals(other.key))
 			return false;
 		if (name == null) {
 			if (other.name != null)
@@ -52,12 +60,8 @@ public class Employee {
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + "]";
-	}
 	
+		
 	
 	
 }
