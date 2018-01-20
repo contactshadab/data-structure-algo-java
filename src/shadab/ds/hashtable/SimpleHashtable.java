@@ -1,10 +1,10 @@
 package shadab.ds.hashtable;
 
-public class SimpleHashTable {
+public class SimpleHashtable {
 	
 	Employee[] hashtable;
 	
-	SimpleHashTable(){
+	SimpleHashtable(){
 		hashtable = new Employee[5];
 	}
 	
