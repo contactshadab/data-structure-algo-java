@@ -34,14 +34,27 @@ public class TreeNode {
 	}
 	
 	public void insert(int data) {
-			
+		if(data == this.data)
+			return;
+		
+		if(data < this.data) {
+			if(leftChild == null)
+				leftChild = new TreeNode(data);
+			else
+				leftChild.insert(data);
+		}else {
+			if(rightChild == null)
+				rightChild = new TreeNode(data);
+			else
+				rightChild.insert(data);
+		}
 	}
 	
 	public void traverseInOrder() {
 		if(leftChild != null)
 			leftChild.traverseInOrder();
 		
-		System.out.println(data + ", ");
+		System.out.print(data + ", ");
 		
 		if(rightChild != null)
 			rightChild.traverseInOrder();

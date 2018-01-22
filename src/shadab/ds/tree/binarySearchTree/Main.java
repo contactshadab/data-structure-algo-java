@@ -12,7 +12,7 @@ public class Main {
 	    intTree.insert(29);
 	    intTree.insert(26);
 	    intTree.insert(22);
-	    intTree.insert(32);
+	    intTree.insert(-32);
 	    
 	    intTree.traverseInOrder();
 
