@@ -14,4 +14,10 @@ public class Tree {
 		if(root != null)
 			root.traverseInOrder();
 	}
+	
+	public TreeNode get(int data) {
+		if(root != null)
+			return root.get(data);
+		return null;
+	}
 }

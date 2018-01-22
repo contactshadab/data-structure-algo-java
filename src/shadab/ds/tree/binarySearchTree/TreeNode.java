@@ -33,6 +33,11 @@ public class TreeNode {
 		this.rightChild = rightChild;
 	}
 	
+	@Override
+	public String toString() {
+		return "TreeNode [data=" + data + "]";
+	}
+
 	public void insert(int data) {
 		if(data == this.data)
 			return;
@@ -48,6 +53,21 @@ public class TreeNode {
 			else
 				rightChild.insert(data);
 		}
+	}
+	
+	public TreeNode get(int data) {
+		if(data == this.data)
+			return this;
+		
+		if(data < this.data) {
+			if(leftChild != null)
+				return leftChild.get(data);
+		}else {
+			if(rightChild != null)
+				return rightChild.get(data);
+		}
+		
+		return new TreeNode(0);
 	}
 	
 	public void traverseInOrder() {
