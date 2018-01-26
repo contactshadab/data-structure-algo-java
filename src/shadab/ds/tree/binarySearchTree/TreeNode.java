@@ -84,6 +84,30 @@ public class TreeNode {
 		return rightChild.getMax();
 	}
 	
+	public void traversePreOrder() {
+		System.out.print(data + ", ");
+		
+		if(leftChild != null) {
+			leftChild.traversePreOrder();
+		}
+		
+		if(rightChild != null) {
+			rightChild.traversePreOrder();
+		}
+	}
+	
+	public void traversePostOrder() {
+		if(leftChild != null) {
+			leftChild.traversePreOrder();
+		}
+		
+		if(rightChild != null) {
+			rightChild.traversePreOrder();
+		}
+		
+		System.out.print(data + ", ");
+	}
+	
 	public void traverseInOrder() {
 		if(leftChild != null)
 			leftChild.traverseInOrder();

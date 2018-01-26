@@ -13,9 +13,15 @@ public class Main {
 	    intTree.insert(26);
 	    intTree.insert(22);
 	    intTree.insert(32);
+	    intTree.insert(17);
 	    
 	    intTree.traverseInOrder();
+	    System.out.println();
 	    
+	    intTree.traversePreOrder();
+	    System.out.println();
+	    
+	    intTree.traversePostOrder();
 	    System.out.println();
 	    
 	    System.out.println("Get: " + intTree.get(27));
