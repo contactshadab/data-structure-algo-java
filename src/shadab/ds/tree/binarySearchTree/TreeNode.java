@@ -67,7 +67,21 @@ public class TreeNode {
 				return rightChild.get(data);
 		}
 		
-		return new TreeNode(0);
+		return null;
+	}
+	
+	public TreeNode getMin() {
+		if(leftChild == null)
+			return this;
+		
+		return leftChild.getMin();
+	}
+	
+	public TreeNode getMax() {
+		if(rightChild == null)
+			return this;
+		
+		return rightChild.getMax();
 	}
 	
 	public void traverseInOrder() {
@@ -78,6 +92,35 @@ public class TreeNode {
 		
 		if(rightChild != null)
 			rightChild.traverseInOrder();
+	}
+	
+	public TreeNode delete(TreeNode subtreeRoot, int data) {
+		if(subtreeRoot == null)
+			return null;
+
+		//Case - If the subtreeRoot has 0 or 1 child
+		if(data < subtreeRoot.getData()) {
+			subtreeRoot.leftChild = delete(subtreeRoot.leftChild, data);
+		}else if(data > subtreeRoot.getData()) {
+			subtreeRoot.rightChild = delete(subtreeRoot.rightChild, data);
+		}
+		//Case - If the subtreeRoot has 2 children
+		else {
+			if(subtreeRoot.leftChild == null) {
+				return subtreeRoot.rightChild;
+			}else if(subtreeRoot.rightChild == null) {
+				return subtreeRoot.leftChild;
+			}else {
+				//Get min of the right subtree
+				int minRightSubtree = subtreeRoot.rightChild.getMin().data;
+				//Replace the subtreeRoot value with the min of its right subtree
+				subtreeRoot.setData(minRightSubtree);
+				//Delete the node with min of the right subtree and set the replacement node to its right subchild
+				subtreeRoot.rightChild = delete(subtreeRoot.rightChild, minRightSubtree);
+			}
+		}
+		
+		return subtreeRoot;
 	}
 	
 	

@@ -12,14 +12,22 @@ public class Main {
 	    intTree.insert(29);
 	    intTree.insert(26);
 	    intTree.insert(22);
-	    intTree.insert(-32);
+	    intTree.insert(32);
 	    
 	    intTree.traverseInOrder();
 	    
 	    System.out.println();
 	    
-	    System.out.println(intTree.get(27));
+	    System.out.println("Get: " + intTree.get(27));
+	    System.out.println("Get invalid: " + intTree.get(999));
 
+	    System.out.println("Min: " + intTree.getMin());
+	    
+	    System.out.println("Max: " + intTree.getMax());
+	    
+	    System.out.println(intTree.delete(277));
+	    
+	    intTree.traverseInOrder();
 	}
 
 }

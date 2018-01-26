@@ -20,4 +20,22 @@ public class Tree {
 			return root.get(data);
 		return null;
 	}
+	
+	public TreeNode getMin() {
+		if(root != null)
+			return root.getMin();
+		return null;
+	}
+	
+	public TreeNode getMax() {
+		if(root != null)
+			return root.getMax();
+		return null;
+	}
+	
+	public TreeNode delete(int data) {
+		if(root != null)
+			root.delete(root, data);
+		return null;
+	}
 }
