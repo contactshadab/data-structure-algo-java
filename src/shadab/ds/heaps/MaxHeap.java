@@ -36,26 +36,33 @@ public class MaxHeap {
 		heap[index] = newValue;
 	}
 	
-	private void fixHeapBelow(int index) {
-		int currentValue = heap[index];
+	private void fixHeapBelow(int index, int lastHeapIndex) {
+		int maxChild;
 		
-		while(index < size-1 & currentValue < heap[getMaxChild(index)]) {
-			heap[index] = heap[getMaxChild(index)];
-			index = getMaxChild(index);
+		while(index <= lastHeapIndex) {
+			int leftChild = 2*index + 1;
+			int rightChild = 2*index + 2;
+			
+			if(leftChild <= lastHeapIndex) {
+				if(rightChild > lastHeapIndex)
+					maxChild = leftChild;
+				else
+					maxChild = (heap[leftChild] > heap[rightChild]? leftChild: rightChild);
+				
+				if(heap[index] < heap[maxChild]) {
+					int temp = heap[index];
+					heap[index] = heap[maxChild];
+					heap[maxChild] = temp;
+				}else {
+					break;
+				}
+			}else {
+				break;
+			}
+			
+			index = maxChild;
+			
 		}
-		heap[index] = currentValue;
-	}
-	
-	private int getMaxChild(int index) {
-		//Left child check
-		if((2*index + 1) > size-1)
-			return -1;
-		
-		//Right child check
-		if((2*index + 2) > size-1)
-			return (2*index + 1);
-		
-		return (heap[2*index + 1] > heap[2*index + 2])? (2*index + 1): (2*index + 2);
 	}
 	
 	private int getParent(int index) {
@@ -69,7 +76,7 @@ public class MaxHeap {
 		if(index > 0 && heap[index] > heap[getParent(index)]) {
 			fixHeapAbove(index);
 		}else {
-			fixHeapBelow(index);
+			fixHeapBelow(index, size-1);
 		}
 		size--;
 		return deletedValue;
@@ -86,6 +93,21 @@ public class MaxHeap {
 			throw new IndexOutOfBoundsException("Heap is empty");
 		
 		return heap[0];
+	}
+	
+	public void sort() {
+		
+		int lastHeapIndex = size-1;
+		
+		while(lastHeapIndex > 0) {
+			//Swap 0th and last index elements
+			int temp = heap[0];
+			heap[0] = heap[lastHeapIndex];
+			heap[lastHeapIndex] = temp;
+			
+			//Heapify below
+			fixHeapBelow(0, --lastHeapIndex);
+		}
 	}
 	
 }
