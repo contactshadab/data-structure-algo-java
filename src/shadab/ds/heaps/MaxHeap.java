@@ -12,9 +12,13 @@ public class MaxHeap {
 		return size == heap.length;
 	}
 	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
 	public void insert(int data) {
 		if(isFull())
-			throw new ArrayIndexOutOfBoundsException();
+			throw new ArrayIndexOutOfBoundsException("Heap is full");
 		
 		heap[size] = data;
 		fixHeapAbove(size);
@@ -75,6 +79,13 @@ public class MaxHeap {
 		for(int i=0; i<size; i++)
 			System.out.print(heap[i] + ", ");
 		System.out.println("");
+	}
+	
+	public int peek() {
+		if(isEmpty())
+			throw new IndexOutOfBoundsException("Heap is empty");
+		
+		return heap[0];
 	}
 	
 }
