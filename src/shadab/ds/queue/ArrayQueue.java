@@ -8,20 +8,20 @@ public class ArrayQueue {
 	
 	Employee[] queue;
 	int front;
-	int end;
+	int back;
 	
 	ArrayQueue(int capacity){
 		this.queue = new Employee[capacity];
 	}
 	
 	public void add(Employee employee) {
-		if(end == queue.length) {
+		if(back == queue.length) {
 			Employee[] newQueue = new Employee[2 * queue.length];
 			System.arraycopy(queue, 0, newQueue, 0, queue.length);
 			queue = newQueue;
 		}
 		
-		queue[end++] = employee;
+		queue[back++] = employee;
 	}
 	
 	public Employee remove() {
@@ -39,11 +39,11 @@ public class ArrayQueue {
 	}
 	
 	public int size() {
-		return end-front;
+		return back-front;
 	}
 	
 	public void printQueue() {
-		for(int i = front; i < end; i++)
+		for(int i = front; i < back; i++)
 			System.out.println(queue[i]);
 	}
 
