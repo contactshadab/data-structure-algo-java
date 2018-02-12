@@ -1,4 +1,4 @@
-package shadab.algo.sort.selectionsort;
+package shadab.algo.selectionsort;
 
 public class SelectionSort {
 	

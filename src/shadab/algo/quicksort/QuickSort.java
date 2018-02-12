@@ -1,4 +1,4 @@
-package shadab.algo.sort.quicksort;
+package shadab.algo.quicksort;
 
 public class QuickSort {
 

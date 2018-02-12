@@ -1,4 +1,4 @@
-package shadab.algo.sort.insertionsort;
+package shadab.algo.insertionsort;
 
 public class InsertionSort {
 
