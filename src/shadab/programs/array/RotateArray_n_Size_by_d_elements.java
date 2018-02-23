@@ -32,6 +32,24 @@ public class RotateArray_n_Size_by_d_elements {
 	}
 	
 	
+	/*Rotate one by one
+	Time Complexity: O(n*d) ~~ O(n)
+	Space Complexity: O(1)*/
+	public void rotateOneByOne(int[] arr, int d){
+		int n = arr.length -1;
+		for(int i=0; i<d; i++){
+			//Store the first element to be copied to last
+			int temp = arr[0];
+			//iterate n-1 times as last element will be copied to the previous one
+			int j;
+			for(j=0; j <= n-1; j++){
+				arr[j] = arr[j+1];
+			}
+			//Copy the first item to the last element
+			arr[j] = temp;
+		}
+	}
+	
 	public void display(int[] arr){
 		for(int i=0; i<arr.length; i++){
 			System.out.print(arr[i] + " ");
@@ -45,10 +63,15 @@ public class RotateArray_n_Size_by_d_elements {
 		int d = 2;
 		
 		RotateArray_n_Size_by_d_elements rotateArray = new RotateArray_n_Size_by_d_elements();
-		rotateArray.display(arr);
 		
-		rotateArray.rotateByUsingExtraSpace(arr, d);
-		rotateArray.display(arr);
+//		rotateArray.display(arr);
+//		rotateArray.rotateByUsingExtraSpace(arr, d);
+//		rotateArray.display(arr);
+		
+		int[] arr2 = {1, 2, 3, 4, 5, 6, 7, 8};
+		rotateArray.display(arr2);
+		rotateArray.rotateOneByOne(arr2, d);
+		rotateArray.display(arr2);
 	}
 
 }
