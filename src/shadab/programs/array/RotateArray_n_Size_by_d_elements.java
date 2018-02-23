@@ -50,6 +50,17 @@ public class RotateArray_n_Size_by_d_elements {
 		}
 	}
 	
+	/*Rotate array of n elements by d elements
+	Reverse three parts of the array 0-d, d+1-n and finally 0-n
+	Time Complexity: O(n)
+	Space Complexity: O(1)*/
+	public void rotateByReversing(int[] arr, int d){
+		ReverseArray_ConstantExtraSpace reverse = new ReverseArray_ConstantExtraSpace();
+		reverse.reverseArray(arr, 0, d-1);
+		reverse.reverseArray(arr, d, arr.length -1);
+		reverse.reverseArray(arr, 0, arr.length -1);
+	}
+	
 	public void display(int[] arr){
 		for(int i=0; i<arr.length; i++){
 			System.out.print(arr[i] + " ");
@@ -64,14 +75,19 @@ public class RotateArray_n_Size_by_d_elements {
 		
 		RotateArray_n_Size_by_d_elements rotateArray = new RotateArray_n_Size_by_d_elements();
 		
-//		rotateArray.display(arr);
-//		rotateArray.rotateByUsingExtraSpace(arr, d);
-//		rotateArray.display(arr);
+		rotateArray.display(arr);
+		rotateArray.rotateByUsingExtraSpace(arr, d);
+		rotateArray.display(arr);
 		
 		int[] arr2 = {1, 2, 3, 4, 5, 6, 7, 8};
 		rotateArray.display(arr2);
 		rotateArray.rotateOneByOne(arr2, d);
 		rotateArray.display(arr2);
+		
+		int[] arr3 = {1, 2, 3, 4, 5, 6, 7, 8};
+		rotateArray.display(arr3);
+		rotateArray.rotateByReversing(arr3, d);
+		rotateArray.display(arr3);
 	}
 
 }
