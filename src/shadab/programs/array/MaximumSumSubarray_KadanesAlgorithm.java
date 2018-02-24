@@ -25,7 +25,7 @@ public class MaximumSumSubarray_KadanesAlgorithm {
 		return maxSum;
 	}
 	
-	/*Kadane's algorithm
+	/*Kadane's algorithm variation - Get index as well with max sum
 	Time Complexity: O(n)
 	Space Complexity: O(1)*/
 	public int getMaxSum(int[] arr){
@@ -34,18 +34,29 @@ public class MaximumSumSubarray_KadanesAlgorithm {
 		
 		int globalMax = arr[0];
 		int localMax = arr[0];
+		int globalStart = 0;
+		int globalEnd = 0;
+		int localStart = 0;
 		
 		for(int i = 1; i<arr.length; i++){
+			int localEnd = i;
 			//At every index checking the local max
-			if(arr[i] > arr[i] + localMax)
+			if(arr[i] > arr[i] + localMax){
+				//If localSum is the current element, set start to i
+				localStart = i;
 				localMax = arr[i];
+			}
 			else
 				localMax = arr[i] + localMax;
 			
 			//Changing globalMax if it is lesser than localMax
-			if(globalMax < localMax)
+			if(globalMax < localMax) {
 				globalMax = localMax;
+				globalStart = localStart;
+				globalEnd = localEnd;
+			}
 		}
+		System.out.println("Start: " + globalStart + ", End: " + globalEnd);
 		return globalMax;
 	}
 	
