@@ -1,4 +1,4 @@
-package shadab.programs.array;
+package shadab.programs.stack;
 
 public class ImplementTwoStacksInOneArray {
 	
