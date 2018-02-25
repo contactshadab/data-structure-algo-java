@@ -21,7 +21,7 @@ public class Segregate_0_1_In_Array {
 	}
 	
 	/* Method: 2
-	Start from left and swap with right if 1 encuntered
+	Start from left and swap with right if 1 encountered
 	Time Complexity: O(n)
 	Space Complexity: O(1)*/
 	public void segregateBySwapping(int arr[]) {
