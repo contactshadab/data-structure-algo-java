@@ -1,14 +1,12 @@
 /*
  Given an unsorted linkedlist, remove duplicates
 Method 1:
-	1. Create a hashtable 
-	2. Traverse the linked list.
-	3. If current.data is in hashtable 
-		a. SET current.data = current.next.data
-		b. SET current.next = current.next.next
+	1. Traverse the linked list. Keep two pointers prev and current
+	2. If prev.data == current.data then do nothing just continue the loop with current = current.next
+	3. Else set prev.next = current. Reset prev to current
 	
 	Time Complexity: O(n)
-	Space Complexity: O(n)
+	Space Complexity: O(1)
 
 Method 2:
 	Use Nested loop
@@ -17,16 +15,9 @@ Method 2:
 	
 	Time Complexity: O(n^2)
 	Space Complexity: O(1)
-
-Method 3:
-	1. Sort the array
-	2. Apply algo to remove duplicate from sorted linkedlist
 */
 
 package shadab.programs.linkedList;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class RemoveDuplicatesFromSortedLinkedList {
 	
@@ -58,21 +49,15 @@ public class RemoveDuplicatesFromSortedLinkedList {
 		if(head == null)
 			return;
 		
-		Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
-		
 		Node prev = head;
 		Node current = head;
-		while(current!= null){
-			int data = current.data;
-			//If data is already present in hashtable, it is duplicate
-			if(map.containsKey(data)){
-				//Remove the current node
-				prev.next = current.next;
-			}else{
-				map.put(data, true);
+		while(current.next != null){
+			current = current.next;
+			if(prev.data != current.data){
+				prev.next = current;
+				//Reset prev
 				prev = current;
 			}
-			current = current.next;
 		}
 	}
 	
@@ -87,14 +72,12 @@ public class RemoveDuplicatesFromSortedLinkedList {
 
 	public static void main(String[] args) {
 		RemoveDuplicatesFromSortedLinkedList linkedList = new RemoveDuplicatesFromSortedLinkedList();
-		linkedList.add(40);
 		linkedList.add(10);
-		linkedList.add(40);
 		linkedList.add(10);
 		linkedList.add(20);
 		linkedList.add(20);
 		linkedList.add(20);
-		
+		linkedList.add(40);
 		linkedList.display();
 		linkedList.removeDuplicates();
 		linkedList.display();
