@@ -1,12 +1,12 @@
 package shadab.ds.stacks;
 
-import shadab.ds.linkedlist.LinkedList;
+import shadab.ds.linkedlist.MyLinkedList;
 
 public class LinkedStack<T> {
-	LinkedList<T> stack;
+	MyLinkedList<T> stack;
 	
 	LinkedStack(){
-		stack = new LinkedList<T>();
+		stack = new MyLinkedList<T>();
 	}
 	
 	public boolean isEmpty() {

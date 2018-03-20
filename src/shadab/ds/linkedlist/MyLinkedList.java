@@ -1,6 +1,6 @@
 package shadab.ds.linkedlist;
 
-public class LinkedList<T> {
+public class MyLinkedList<T> {
 
 	private Node<T> head;
 	int size ;

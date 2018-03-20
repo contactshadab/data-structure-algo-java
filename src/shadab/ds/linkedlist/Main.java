@@ -15,7 +15,7 @@ public class Main {
 //		linkedList.removeFromFront();
 //		linkedList.printList();
 		
-		LinkedList<Integer> linkedList = new LinkedList<Integer>();
+		MyLinkedList<Integer> linkedList = new MyLinkedList<Integer>();
 		linkedList.insertSorted(10);
 		linkedList.printList();
 		linkedList.insertSorted(-1);
