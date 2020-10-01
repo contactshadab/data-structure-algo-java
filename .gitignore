@@ -1,1 +1,15 @@
 bin/
+
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# IntelliJ
+.idea
+.settings
+JavaPrograms.iml
+.DS_Store
+
+/target/
