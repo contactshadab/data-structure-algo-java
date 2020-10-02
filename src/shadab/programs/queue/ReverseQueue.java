@@ -1,4 +1,4 @@
-package shadab.programs.array;
+package shadab.programs.queue;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package shadab.programs.array;
+package shadab.programs.queue;
 
 class MyArrayQueue {
     private int[] arr;
