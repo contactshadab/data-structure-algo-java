@@ -36,7 +36,7 @@ class PriorityQueue {
             return;
         }
 
-        //Shift items left
+        //Shift items right
         int i;
         for (i=first+count-1; i>=first; i--) {
             if (item < items[i]) {
