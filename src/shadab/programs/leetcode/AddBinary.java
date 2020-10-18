@@ -50,4 +50,11 @@ public class AddBinary {
 
         return result;
     }
+
+    public static void main(String[] args) {
+        String a = "1010";
+        String b = "1011";
+        String result = new AddBinary().addBinary(a, b);
+        System.out.println(result);
+    }
 }
