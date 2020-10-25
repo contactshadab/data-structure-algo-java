@@ -10,9 +10,6 @@ This repository contains Data Structures and Algorithms problems and their imple
 - [Binary Search Tree](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/shadab/ds/tree/binarySearchTree)
 - [Heap](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/shadab/ds/heaps)
 
-## Programs
-- [All programs](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/shadab/programs)
-
 ## Algorithms
 - [Binary Search](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/shadab/algo/binarySearch)
 - [Bubble Sort](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/shadab/algo/bubblesort)
