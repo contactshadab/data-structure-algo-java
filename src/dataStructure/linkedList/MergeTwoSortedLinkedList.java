@@ -11,7 +11,7 @@ Method:
 Time Complexity: O(n)
 Space Complexity: O(1)*/
 
-package dataStructure.linkedlist;
+package dataStructure.linkedList;
 
 public class MergeTwoSortedLinkedList {
 	

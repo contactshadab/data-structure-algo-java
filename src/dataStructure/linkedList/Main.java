@@ -1,4 +1,4 @@
-package dataStructure.linkedlist;
+package dataStructure.linkedList;
 
 public class Main {
 

@@ -1,6 +1,6 @@
 package dataStructure.stacks;
 
-import dataStructure.linkedlist.MyLinkedList;
+import dataStructure.linkedList.MyLinkedList;
 
 public class LinkedStack<T> {
 	MyLinkedList<T> stack;
