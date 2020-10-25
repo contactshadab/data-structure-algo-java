@@ -2,7 +2,7 @@
 This repository contains Data Structures and Algorithms problems and their implementations in Java.
 
 ## Data Structure
-- [Linked List](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/dataStructure/linkedlist)
+- [Linked List](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/dataStructure/linkedList)
 - [Hash Table](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/dataStructure/hashtable)
 - [Stack](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/dataStructure/stacks)
 - [Queue](https://github.com/contactshadab/data-structure-algo-java/tree/main/src/dataStructure/queue)
