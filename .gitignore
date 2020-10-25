@@ -9,7 +9,7 @@ bin/
 # IntelliJ
 .idea
 .settings
-JavaPrograms.iml
+data-structure-algo-java.iml
 .DS_Store
 
 /target/
